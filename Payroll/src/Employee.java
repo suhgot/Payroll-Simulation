@@ -10,7 +10,7 @@ public abstract class Employee {
 	}
 	
 	public String getEmployeeName() {
-		return employeeFirstName + " " + employeeLastName;
+		return employeeFirstName + ", " + employeeLastName;
 	}
 	
 	public void changeEmployeeName(String First, String Last) {
@@ -26,4 +26,8 @@ public abstract class Employee {
 		
 	}
 	public abstract int getPaycheck(); 
+	
+	public String toString() {
+		return "Id:" + this.getEmployeeNumber() + " - " + this.getEmployeeName();
+	}
 }
