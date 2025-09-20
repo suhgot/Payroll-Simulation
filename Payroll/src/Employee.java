@@ -25,7 +25,7 @@ public abstract class Employee {
 		nextEmployeeNumber++;
 		
 	}
-	public abstract int getPaycheck(); 
+	public abstract float getPaycheck(); 
 	
 	public String toString() {
 		return "Id:" + this.getEmployeeNumber() + " - " + this.getEmployeeName();

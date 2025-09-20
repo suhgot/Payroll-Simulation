@@ -21,7 +21,7 @@ public class HourlyEmployee extends Employee {
 		return this.payRate;
 	}
 	
-	public int getPaycheck() {
+	public float getPaycheck() {
 		return this.hoursWorked * this.payRate;
 	}
 	

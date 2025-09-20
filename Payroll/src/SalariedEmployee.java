@@ -11,12 +11,12 @@ public class SalariedEmployee extends Employee {
 		return this.yearlyPay;
 	}
 	
-	private void changeSalary(int salary){
+	public void changeSalary(int salary){
 		this.yearlyPay = salary;
 	}
 	
-	public int getPaycheck(){
-		return this.yearlyPay * (1/26);
+	public float getPaycheck(){
+		return this.yearlyPay / 26.0f;
 	}
 	
 	public String toString() {
