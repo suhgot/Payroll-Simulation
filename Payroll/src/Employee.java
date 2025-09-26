@@ -10,7 +10,7 @@ public abstract class Employee {
 	}
 	
 	public String getEmployeeName() {
-		return employeeFirstName + ", " + employeeLastName;
+		return employeeLastName + ", " + employeeFirstName;
 	}
 	
 	public void changeEmployeeName(String First, String Last) {
