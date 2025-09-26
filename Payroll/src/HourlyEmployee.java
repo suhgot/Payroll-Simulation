@@ -1,23 +1,23 @@
 
 public class HourlyEmployee extends Employee {
 	
-	private int hoursWorked;
-	private int payRate;
+	private float hoursWorked;
+	private float payRate;
 	
 	
-	public void timeSheet (int hoursWorked) {
+	public void timeSheet (float hoursWorked) {
 		this.hoursWorked = hoursWorked;
 	}
 	
-	public int getTimeSheet() {
+	public float getTimeSheet() {
 		return this.hoursWorked;
 	}
 	
-	public void changeWage(int wage) {
+	public void changeWage(float wage) {
 		this.payRate = wage;
 	}
 	
-	public int getWage() {
+	public float getWage() {
 		return this.payRate;
 	}
 	
@@ -25,13 +25,13 @@ public class HourlyEmployee extends Employee {
 		return this.hoursWorked * this.payRate;
 	}
 	
-	public HourlyEmployee(String First, String Last, int payRate){
+	public HourlyEmployee(String First, String Last, float payRate){
 		super(First, Last);
 		this.payRate = payRate;
 	}
 	
 	public String toString() {
-		return "Hourly: " + this.getWage() + "; " + super.toString();
+		return "Hourly: $" + this.getWage() + "; " + super.toString();
 	}
 	
 }

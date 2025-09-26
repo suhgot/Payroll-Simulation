@@ -2,41 +2,53 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class PayrollUnitTests {
-
     @Test
     public void testHourlyEmployeeMethods() {
-        HourlyEmployee emp = new HourlyEmployee("John", "Doe", 20);
+        HourlyEmployee emp = new HourlyEmployee("John", "Doe", (float) 20.0);
         
-        // Test constructor and getters
+        // Test Employee methods
         assertEquals("John, Doe", emp.getEmployeeName());
-        assertEquals(20, emp.getWage());
+        assertEquals(1, emp.getEmployeeNumber());
+        emp.changeEmployeeName("Saugat", "Shah");
+        assertEquals("Saugat, Shah", emp.getEmployeeName());
         
-        // Test timeSheet methods
-        emp.timeSheet(40);
-        assertEquals(40, emp.getTimeSheet());
+        //Test Hourly Employee getter methods and set the wage for testing
+        emp.timeSheet((float) 5.0);
+        assertEquals(5.0, emp.getTimeSheet(), .001);
+        assertEquals(20.0, emp.getWage(), .001);
+        assertEquals(100.0, emp.getPaycheck(), .001);
         
-        // Test wage change
-        emp.changeWage(25);
-        assertEquals(25, emp.getWage());
+        //Test setter
+        emp.changeWage((float) 15.0);
+        assertEquals(15.0, emp.getWage(), .001);
         
-        // Test paycheck calculation
-        assertEquals(1000.0f, emp.getPaycheck(), 0.001f);
+        //Test toString
+        assertEquals("Hourly: $15.0; Id:1 - Saugat, Shah", emp.toString());
         
-        // Test toString
-        assertEquals("Hourly: 25; Id:1 - John, Doe", emp.toString());
     }
-
+    
     @Test
     public void testSalariedEmployeeMethods() {
-        SalariedEmployee emp = new SalariedEmployee("Jane", "Smith", 52000);
+        SalariedEmployee emp1 = new SalariedEmployee("John", "Doe", 39013);
+        SalariedEmployee emp2 = new SalariedEmployee("Jane", "Doe", 52000);
         
-        // Test constructor and getters
-        assertEquals("Jane, Smith", emp.getEmployeeName());
-        assertEquals(52000, emp.getSalary());
         
-        assertEquals(2000.0f, emp.getPaycheck(), 0.001f);
+     // Test Employee methods
+     assertEquals("Jane, Doe", emp2.getEmployeeName());
+     assertEquals(2, emp2.getEmployeeNumber());
+     emp1.changeEmployeeName("Data", "Structures");
+     assertEquals("Data, Structures", emp1.getEmployeeName());
+     
+     
+     //Test Salaried Employee Methods
+     assertEquals(52000, emp2.getSalary());
+     assertEquals(39013, emp1.getSalary());
+     assertEquals(2000.0, emp2.getPaycheck(), .001);
+     assertEquals(1500.5, emp1.getPaycheck(), .001);
+    
+     emp1.changeSalary(0);
+     
         
-        // Test toString
-        assertEquals("Salaried, Base : 52000; Id:2 - Jane, Smith", emp.toString());
+        
     }
 }

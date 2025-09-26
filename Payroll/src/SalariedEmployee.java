@@ -21,5 +21,5 @@ public class SalariedEmployee extends Employee {
 	
 	public String toString() {
 		return "Salaried, Base : " + this.getSalary() + "; " + super.toString(); 
-	}
+	} 
 }
