@@ -1,7 +1,7 @@
 /**
  * @author Saugat Shah
  * @since 09/27/2025
- * This Unit Test Class ensures that all Methods work as intended for this payroll simulation by using the Junit Tests (V.4)
+ * This Unit Test Class ensures that all Methods of the Payroll Simlation work as intended by using the Junit Tests (V.4)
  */
 
 import static org.junit.Assert.*;
