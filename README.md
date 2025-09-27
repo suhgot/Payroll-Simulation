@@ -20,7 +20,3 @@ A simple Java-based console application that simulates a basic payroll processin
 To run this project, you need to have the following installed on your machine:
 
 *   **Java Development Kit (JDK)** version 8 or higher.
-
-You can check if you have Java installed by opening a terminal/command prompt and typing:
-```bash
-java -version
