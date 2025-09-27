@@ -5,16 +5,21 @@ import org.junit.Test;
 
 public class PayrollUnitTests {
 	
+	
+	
 	//INITIALIZATION
 	public static SalariedEmployee salEmp = new SalariedEmployee("Saugat", "Shah", 10000.0f);
 	public static HourlyEmployee hrEmp = new HourlyEmployee("Jane", "Doe", 20.0f);
 	public static float error = .01f;
 	
+	
+	
 	//EMPLOYEE TESTS
 	@Before
-	public void testChangeEmployeeName() throws Exception{
+	public void testChangeEmployeeName() throws Exception {
 		salEmp.changeEmployeeName("John", "Doe");
 	}
+	
 	
 	@Test
 	public void testGetEmployeeName() throws Exception {
@@ -26,9 +31,11 @@ public class PayrollUnitTests {
 		assertEquals(salEmp.getEmployeeNumber(), 1);
 	}
 	
+	
+	
 	//SALARIED EMPLOYEE TESTS
 	@Before
-	public void testChangeSalary() {
+	public void testChangeSalary() throws Exception {
 		salEmp.changeSalary(39013.00f);
 	}
 	
