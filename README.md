@@ -1,2 +1,26 @@
-# Payroll-Simulation
-This program simulates the salary calculations of a company's payroll.
+# Payroll Simulation
+
+A simple Java-based console application that simulates a basic payroll processing system. This project demonstrates core Object-Oriented Programming (OOP) principles by modeling employees, calculating their pay, and generating a simple payroll report.
+
+## Features
+
+*   **Employee Management:** Models different types of employees (e.g., Salaried, Hourly).
+*   **Pay Calculation:** Automatically calculates pay based on employee type and hours worked.
+*   **Polymorphism:** Uses inheritance and polymorphism to handle different pay structures cleanly.
+*   **Simple Reporting:** Generates a console-based report showing each employee's details and calculated pay.
+
+## Technologies Used
+
+*   **Java**
+
+## Getting Started
+
+### Prerequisites
+
+To run this project, you need to have the following installed on your machine:
+
+*   **Java Development Kit (JDK)** version 8 or higher.
+
+You can check if you have Java installed by opening a terminal/command prompt and typing:
+```bash
+java -version
