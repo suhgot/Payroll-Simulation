@@ -1,6 +1,6 @@
 /**
  * @author Saugat Shah
- * @version 9/27/2025
+ * @version 09/27/2025
  * 
  * The SalariedEmployee class is a subclass of the Employee.java class
  * This class is a type of Employee that get's paid on a salaried basis
