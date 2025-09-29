@@ -4,18 +4,22 @@
  * 
  * This abstract class Employee is the template for every employee in a certain company's payroll simulation
  * 
- * Each employee is given a unique ID, and is assigned their first and last name
+ * Each employee is given a unique ID, and is assigned their first and last name with getters and accessors for those members
  * 
  * This class also makes sure that all subclasses implement a paycheck method so that all employee's can access their paycheck information and edit required information to enhance
- * workflow
+ * workflow 
  */
 public abstract class Employee {
 	
-	private static int nextEmployeeNumber = 1; //nextEmployeeNumber ensures next employee # is 1 at the beginning of running the program (private to ensure that it cannot be modified by others)
-	private int employeeNumber; //employeeNumber is a set Id # that gets modified per employee (private to ensure that it cannot be modified by others)
+	/**nextEmployeeNumber ensures next employee # is 1 at the beginning of running the program (private to ensure that it cannot be modified by others)*/
+	private static int nextEmployeeNumber = 1; 
+	/**employeeNumber is a set Id # that gets modified per employee (private to ensure that it cannot be modified by others)*/
+	private int employeeNumber;
 	
-	private String employeeFirstName; //employeeFirstName creates a base employee first name string (private to ensure that it cannot be modified by others)
-	private String employeeLastName; //employeeLastName creates a base employee last name string (private to ensure that it cannot be modified by others)
+	/**employeeFirstName creates a base employee first name string (private to ensure that it cannot be modified by others)*/
+	private String employeeFirstName;
+	/**employeeLastName creates a base employee last name string (private to ensure that it cannot be modified by others)*/
+	private String employeeLastName;
 	
 	
 	/**
@@ -35,12 +39,18 @@ public abstract class Employee {
 	}
 	
 	/**
-	 * changeEmployeeName implements a system for employee's to change their legal name for marriage or legal purposes.
+	 * changeEmployeeFirstName implements a system for employee's to change their legal first name for marriage or legal purposes.
 	 * @param First (their new first name)
-	 * @param Last (their new Last name)
 	 */
-	public void changeEmployeeName(String First, String Last) {
+	public void changeEmployeeFirstName(String First) {
 		this.employeeFirstName = First;
+	}
+	
+	/**
+	 * changeEmployeeLastName implements a system for employee's to change their legal last name for marriage or legal purposes.
+	 * @param Last (their new first name)
+	 */
+	public void changeEmployeeLastName(String Last) {
 		this.employeeLastName = Last;
 	}
 	
@@ -64,9 +74,9 @@ public abstract class Employee {
 	
 	/**
 	 * the ToString method is overridden so that the toString method always gives the employee's Id and their Name
-	 * @Override
-	 * @return returns the Employee's Id number and their name.
+	 * @return returns the Employee's Id number and their name
 	 */
+	@Override 
 	public String toString() {
 		return "Id:" + this.getEmployeeNumber() + " - " + this.getEmployeeName();
 	}

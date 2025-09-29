@@ -7,10 +7,14 @@
  * 
  * This class emulates and calculates a specified salaried employee's paycheck based on their annual set salary on a bi-weekly basis
  * 
+ * This class contains getters and accessors for a salaried employee's paycheck and salary
+ * This class also gets access to methods from the superclass Employee
+ * 
  */
 public class SalariedEmployee extends Employee {
 	
-	protected float yearlyPay; //yearly pay is used to store a specific employee's salary (protected to ensure it cannot be tampered)
+	/**yearly pay is used to store a specific employee's salary (protected to ensure it cannot be tampered)*/
+	protected float yearlyPay;
 	
 	/**
 	 * The SalariedEmployee constructor initializes a Salaried employee by their first name, last name, and their given salary, the employee is also given a unique Id.
@@ -49,8 +53,9 @@ public class SalariedEmployee extends Employee {
 	
 	/**
 	 * toString Overrides the toString method and returns the Employee's type, their base yearly salary, their Id, and name
-	 * @Override 
+	 * @return returns the Employee's: salary, Id number, and their name
 	 */
+	@Override 
 	public String toString() {
 		return "Salaried, Base : $" + String.format("%.2f", getSalary()) + "; " + super.toString(); 
 	} 

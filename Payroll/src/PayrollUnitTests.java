@@ -23,7 +23,8 @@ public class PayrollUnitTests {
 	//EMPLOYEE TESTS
 	@Before
 	public void testChangeEmployeeName() throws Exception {
-		salEmp.changeEmployeeName("John", "Doe");
+		salEmp.changeEmployeeFirstName("John");
+		salEmp.changeEmployeeLastName("Doe");
 	}
 	
 	

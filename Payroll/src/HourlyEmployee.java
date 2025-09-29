@@ -6,12 +6,16 @@
  * This class is a type of Employee that get's paid on a hourly basis
  * 
  * This class emulates and calculates a specified hourly employee's paycheck based on their hoursWorked and their given wage
+ * This class contains getters and setters for an Employee's hours worked (time sheet) and their wage
+ * This class also gets access to methods from the superclass Employee
  * 
  */
 public class HourlyEmployee extends Employee {
 	
-	private float hoursWorked; //hoursWorked is a private member of the Hourly Employee class that ensures that each hourly employee can input their hours into the time sheet  (private to ensure that other members cannot alter an Employees' hours)
-	private float payRate; //payRate is a set Wage of an Hourly Employee it is set private to ensure that other members of the company cannot alter their wage.
+	/**hoursWorked is a private member of the Hourly Employee class that ensures that each hourly employee can input their hours into the time sheet  (private to ensure that other members cannot alter an Employees' hours)*/
+	private float hoursWorked;
+	/**payRate is a set Wage of an Hourly Employee it is set private to ensure that other members of the company cannot alter their wage.*/
+	private float payRate;
 	
 	/**
 	 * timeSheet records the hours Worked by a particular Hourly Employee
@@ -62,13 +66,13 @@ public class HourlyEmployee extends Employee {
 	public HourlyEmployee(String First, String Last, float payRate){
 		super(First, Last);
 		this.payRate = payRate;
-		hoursWorked = 0;
 	}
 	
 	/**
 	 * toString Overrides the toString method and returns the Employee's type, their wage, their Id, and name
-	 * @Override
+	 * @return returns the Employee's: wage, Id number, and their name
 	 */
+	@Override 
 	public String toString() {
 		return "Hourly: $" + String.format("%.2f", getWage()) + "; " + super.toString();
 	}
