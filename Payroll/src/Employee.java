@@ -39,6 +39,22 @@ public abstract class Employee {
 	}
 	
 	/**
+	 * getEmployeeLastName returns a unique employee's Last name
+	 * @return Employee's Last name
+	 */
+	public String getEmployeeLastName() {
+		return employeeLastName;
+	}
+	
+	/**
+	 * getEmployeeFirstName returns a unique employee's First name
+	 * @return Employee's First name
+	 */
+	public String getEmployeeFirstName() {
+		return employeeFirstName;
+	}
+	
+	/**
 	 * changeEmployeeFirstName implements a system for employee's to change their legal first name for marriage or legal purposes.
 	 * @param First (their new first name)
 	 */

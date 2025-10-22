@@ -2,6 +2,7 @@
  * @author Saugat Shah
  * @since 09/27/2025
  * This Unit Test Class ensures that all Methods of the Payroll Simulation work as intended by using the Junit Tests (V.4)
+ * @note THIS JAVA FILE IS NOT RELEVANT TO PROJECT 2 AS IT IS NOT A REQUIREMENT. THIS FILE IS AN OLD PIECE FROM THE FIRST IMPLEMENTATION OF PAYROLL
  */
 
 import static org.junit.Assert.*;
