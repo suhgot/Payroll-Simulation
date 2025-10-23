@@ -231,6 +231,27 @@ public class Payroll {
     
     // ---------------------------------- SEARCHING METHODS -----------------------------------
     
+    /**
+     * Binary Search searches for numbers in the employee array (in this case, IDS)
+     * @param array
+     * @param low
+     * @param high
+     * @param num
+     * @return Employee ID needed
+     */
+    public static int binarySearch(Employee[] array, int low, int high, int num) {
+    	if (high>=low) {
+    		int mid = low + (high - low)/2;
+    		if (array[mid].getEmployeeNumber() == num) {
+    			return mid;
+    		}
+    		if (array[mid].getEmployeeNumber() > num) {
+    			return binarySearch(array, low, mid - 1, num);
+    		}
+    		return binarySearch(array, mid + 1, high, num);   			
+    	}
+    	return -1;
+    }
     
     // ---------------------------------- OPTION 1 -----------------------------------
     /**
@@ -342,9 +363,28 @@ public class Payroll {
     		return;
     	}
     	
-    	int empNum = validIntChecker("Enter the employee's number you would like to find: ");
+    	//Initializes the ID of the Employee that the user wants to find
+    	int empNum;
     	
+    	do{
+    		empNum = validIntChecker("Enter the employee's number you would like to find: ");
+    		if (empNum > empCount)
+    			System.out.println("Out of Employee Range!, Please enter an employee ID that is in the range. (1 - " + empCount + "): ");
+    	}
+    	while (empNum > empCount);
     	
+    	if (empNum == -1)
+    		return;
+    		
+    	// Sort by employee number using generic quick sort
+		quickSort(employees, empCount, new Comparator<Employee>() {
+		    public int compare(Employee e1, Employee e2) {
+		        return Integer.compare(e1.getEmployeeNumber(), e2.getEmployeeNumber());
+		    }
+		});
+		
+		int empIndex = binarySearch(employees, 0, empCount -1, empNum);
+    	System.out.println(employees[empIndex].toString());
     }
     
     
