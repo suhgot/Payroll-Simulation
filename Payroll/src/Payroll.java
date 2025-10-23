@@ -103,7 +103,7 @@ public class Payroll {
     		String input = keyboard.nextLine().trim();
     		if (input.equalsIgnoreCase("q")) 
     			return "q";
-    		if (!input.isEmpty() && input.matches("[a-zA-Z\\\\-\\\\s]+"))
+    		if (!input.isEmpty() && input.matches("[a-zA-Z\\-\\s]+"))
     			return input;
     			System.out.println("Please enter a valid input");
     	}
@@ -226,6 +226,25 @@ public class Payroll {
     public static <T> void quickSort(T[] array, int count, Comparator <T> comparator) {
         if (count > 0) {
             quickSortHelper(array, 0, count - 1, comparator);
+        }
+    }
+    
+    /**
+     * selectionSort sorts the employee's by paycheck amount
+     * @param array
+     * @param count
+     */
+    public static void selectionSortPaycheck(Employee[] array, int count) {
+        for (int i = 0; i < count - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < count; j++) {
+                if (array[j].getPaycheck() > array[maxIndex].getPaycheck()) {
+                    maxIndex = j;
+                }
+            }
+            Employee temp = array[i];
+            array[i] = array[maxIndex];
+            array[maxIndex] = temp;
         }
     }
     
@@ -390,13 +409,45 @@ public class Payroll {
     
     // ---------------------------------- OPTION 4 -----------------------------------
     
+    /**
+     * runPayroll is created to list the payRoll's of employee's from greatest paycheck to the least. It show's the paycheck's of all employee's on a bi-weekly timing.
+     */
     private static void runPayroll() {
-    	if (empCount == 0) {
-    		System.out.println("You have no employees, please create some employees first.");
-    		return;
-    	}
+       
+        if (empCount == 0) {
+            System.out.println("You have no employees, please create some employees first.");
+            return;
+        }
+        
+        for(int i = 0; i < empCount; i++) {
+            if(employees[i] instanceof HourlyEmployee) {
+                float hoursWorked = validFloatChecker("How many hours did " + employees[i].getEmployeeFirstName() + " work? Enter 'q' to return to main menu: ");
+                if (hoursWorked == -1.0f) {
+                    float confirm = validFloatChecker("Are you sure you want to quit? You will lose any values entered so far. Enter 'q' again to confirm or enter hours to continue: ");
+                    if (confirm == -1.0f) {
+                        return;
+                    } 
+                    else {
+                        hoursWorked = confirm;
+                    }
+                }
+                ((HourlyEmployee) employees[i]).timeSheet(hoursWorked);
+            }
+        }
+
+        //Selection sort implementation
+        selectionSortPaycheck(employees, empCount);
+        
+        //Formatting for output
+        for(int i = 0; i < empCount; i++) {
+            String name = employees[i].getEmployeeLastName() + ", " + employees[i].getEmployeeFirstName();
+            float paycheck = employees[i].getPaycheck();
+            System.out.printf("%-30s $%,10.2f%n", name, paycheck);
+        }
+        
+        System.out.println("\nEnd of Payroll");
     }
-    
-    
-}
+
+
+}    
 
