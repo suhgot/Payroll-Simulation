@@ -20,8 +20,11 @@ A simple Java-based console application that simulates a basic payroll processin
 To run this project, you need to have the following installed on your machine:
 
 *   **Java Development Kit (JDK)** version 8 or higher.
-<<<<<<< HEAD
 
 This project would not upload to GitHub if it weren't pushed to the "master" branch. Therefore, you may find the files required to run this Simulation in the "master" branch.
-=======
->>>>>>> branch 'master' of https://github.com/suhgot/Payroll-Simulation.git
+
+### Running the Application
+
+1. Clone the repository:
+```bash
+git clone https://github.com/suhgot/Payroll-Simulation.git
